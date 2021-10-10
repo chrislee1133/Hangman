@@ -1,0 +1,74 @@
+body {
+   text-align: center;
+   margin-top: 300px;
+   font-size: 50px;
+   font-family: Arial;
+   background-color: #DDDDDD;
+}
+
+.button {
+   background-color: #AAAAFF;
+   border: 2px solid;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.button:hover {
+   background-color: #33FF33;
+}
+
+.button:active {
+   background-color: #AAAAAA;
+}
+
+.guess {
+   border: 2px solid green;
+   box-sizing: border-box;
+   height: 36px;
+}
+
+.oform {
+   margin-top: 6px;
+}
+
+/* // animation container */
+.animation-title {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.eye-animation {  
+  /* // place in the middle of the screen */
+  margin: auto;
+  
+  width: 300px;
+  height: 300px;
+  
+  /* // we set the horizontal size to 1800% because we have 18 frames */
+  /* // and we position the sprite so that left frame is visible */
+  background-image: url('http://localhost/test/HangmanSpritesheet/hangmanspritesheet.svg');
+  background-size: 900%, 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  
+  /* // 'animation-timing-function' ensures users won’t see half of one frame and half of the following frame both at the same time */
+  /* // we set the number of steps to 17 because we have 18 frames  */
+  animation-name: eye-fill;
+  animation-duration: 4.5s;
+  animation-timing-function: steps(8);
+  animation-iteration-count: infinite;
+}
+ 
+/* during the animation we move the background-image from left to right */
+@keyframes eye-fill {
+  from {
+    background-position: left;
+  }
+  to { 
+    background-position: right;
+  }
+}
